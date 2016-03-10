@@ -1,7 +1,7 @@
 {
   "name": "sidekick-eslint",
   "version": "1.0.0",
-  "description": "Wraps 'elint' to lint your JavaScript code.",
+  "description": "Sidekick analyser that wraps 'elint'.",
   "main": "index.js",
   "keywords": [
     "javascript",
