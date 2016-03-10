@@ -1,0 +1,23 @@
+{
+    "analyser": "eslint",
+    "version": "0.0.1",
+    "interpreter": "node",
+    "script": "eslint.js",
+    "scope": "blob",
+    "category": "object",
+    "tagger": false,
+    "configurable": true,
+    "configFiles": [
+        ".eslintrc"
+    ],
+    "shortName": "eslint",
+    "displayColor": "purple",
+    "language": "js",
+    "displayName": "Code issues (eslint)",
+    "displayCategory": "quality",
+    "shortDescription": "Checks your code for quality issues.",
+    "underlyingAnalyser": {
+      "name": "eslint",
+      "url" : "https://github.com/eslint/eslint"
+    }
+}
