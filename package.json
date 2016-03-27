@@ -24,9 +24,9 @@
   "license": "MIT",
   "dependencies": {
     "easy-stdin": "^1.0.1",
-    "eslint": "^2.2.0",
-    "strip-json-comments": "^1.0.4",
-    "sidekick-analyser": "^1.1.0"
+    "eslint": "^2.5.1",
+    "sidekick-analyser": "^1.1.0",
+    "strip-json-comments": "^1.0.4"
   },
   "devDependencies": {
     "mocha": "^2.4.5"
