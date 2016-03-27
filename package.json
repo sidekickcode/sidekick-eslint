@@ -23,6 +23,7 @@
   "author": "We Are Sidekick Ltd.",
   "license": "MIT",
   "dependencies": {
+    "@sidekick/analyser-common": "^1.0.2",
     "easy-stdin": "^1.0.1",
     "eslint": "^2.5.1",
     "sidekick-analyser": "^1.1.0",
