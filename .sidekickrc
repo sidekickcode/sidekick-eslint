@@ -1,0 +1,28 @@
+{
+    "exclude": [
+    ],
+    "languages": {
+      "js": {
+        "sidekick-js-todos": {
+          "failCiOnError": false,
+          "version": "1.0.1"
+        },
+        "sidekick-jscs": {
+            "failCiOnError": false
+        },
+        "sidekick-eslint": {
+            "failCiOnError": true
+        }
+      },
+      "json": {
+          "sidekick-david": {
+              "failCiOnError": false
+          }
+      },
+      "all": {
+          "sidekick-security": {
+              "failCiOnError": true
+          }
+      }
+    }
+}
