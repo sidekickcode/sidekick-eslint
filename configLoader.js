@@ -5,7 +5,7 @@
 "use strict";
 
 //not part of eslint's public API - so fetch by path
-const esLintConfig = require('./node_modules/eslint/lib/config/config-file');
+const esLintConfig = require('eslint/lib/config/config-file');
 
 /**
  * Has the repo specified got any eslint config file (or section in package.json)
