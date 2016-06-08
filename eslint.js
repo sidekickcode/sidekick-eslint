@@ -10,6 +10,13 @@ const debug = require('debug')('eslint');
 const annotationDefaults = {analyserName: 'eslint'};
 const configFileName = '.eslintrc';
 
+const LOG_FILE = path.join(__dirname, '/debug.log');
+
+//log to file as any stdout will be reported to the analyser runner
+function logger(message) {
+  fs.appendFile(LOG_FILE, message + '\n');
+}
+
 if(require.main === module) {
   execute();
 }
@@ -19,14 +26,14 @@ function execute() {
   sidekickAnalyser(function(setup) {
     var config;
 
-    debug('setup: ' + JSON.stringify(setup));
+    logger('setup: ' + JSON.stringify(setup));
     var conf = (setup.configFiles || {})[configFileName];
     if(conf) {
       try {
         config = JSON.parse(stripJsonComments(conf));
-        debug('using config: ' + JSON.stringify(config));
+        logger('using config: ' + JSON.stringify(config));
       } catch(e) {
-        debug('config parsing failed: ' + e.message);
+        logger('config parsing failed: ' + e.message);
         // FIXME need some way of signalling
         console.error("can't parse config");
         console.error(e);
@@ -44,6 +51,7 @@ function execute() {
 }
 
 function run(content, config) {
+  logger('run');
   try {
     var errors = eslint.linter.verify(content, config);
     return errors.map(format);
