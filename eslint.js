@@ -2,6 +2,7 @@
 
 const sidekickAnalyser = require("@sidekick/analyser-common");
 const fs = require('fs');
+const path = require('path');
 
 const stripJsonComments = require("strip-json-comments");
 const eslint = require('eslint');
