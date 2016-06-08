@@ -7,7 +7,7 @@ const stripJsonComments = require("strip-json-comments");
 const eslint = require('eslint');
 const debug = require('debug')('eslint');
 
-const annotationDefaults = {analyserName: 'eslint'};
+const annotationDefaults = {analyserName: 'sidekick-eslint'};
 const configFileName = '.eslintrc';
 
 const LOG_FILE = path.join(__dirname, '/debug.log');

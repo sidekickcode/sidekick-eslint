@@ -7,4 +7,5 @@ notifications:
 
 script:
   - npm test
+  - npm i sidekick
   - sidekick run --ci
