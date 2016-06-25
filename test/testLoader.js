@@ -1,5 +1,4 @@
 var chai = require('chai');
-var assert = chai.assert;
 var expect = chai.expect;
 
 var cl = require('../configLoader');
@@ -25,16 +24,13 @@ describe('eslint config loader', function() {
     });
 
     it('finds config file', function () {
-      fs.writeFile(path.join(fixturesDir, '.eslintrc'), 'hello world', {encoding: 'utf-8'}, function(err){
-        expect(cl.hasConfigFile(fixturesDir)).to.be.true;
-      });
-
+      fs.writeFileSync(path.join(fixturesDir, '.eslintrc'), 'hello world', {encoding: 'utf-8'});
+      expect(cl.hasConfigFile(fixturesDir)).to.eventually.be.true;
     });
 
     it('finds config section in package.json', function () {
-      fs.writeFile(path.join(fixturesDir, 'package.json'), '{"eslintConfig": {}}', {encoding: 'utf-8'}, function(err){
-        expect(cl.hasConfigFile(fixturesDir)).to.be.true;
-      });
+      fs.writeFileSync(path.join(fixturesDir, 'package.json'), '{"eslintConfig": {}}', {encoding: 'utf-8'});
+      expect(cl.hasConfigFile(fixturesDir)).to.eventually.be.true;
     });
 
     it('finds loads a valid config', function () {
@@ -57,17 +53,16 @@ describe('eslint config loader', function() {
     });
 
     it('fails for a non-existent dir', function () {
-      expect(cl.hasConfigFile(fixturesDir)).to.be.false;
+      expect(cl.hasConfigFile(fixturesDir)).to.eventually.be.false;
     });
 
     it('knows when there is no config files available', function () {
-      expect(cl.hasConfigFile(fixturesDir)).to.be.false;
+      expect(cl.hasConfigFile(fixturesDir)).to.eventually.be.false;
     });
 
     it('fails for package.json that does not contain eslintConfig section', function () {
-      fs.writeFile(path.join(fixturesDir, 'package.json'), '{"hello": {}}', {encoding: 'utf-8'}, function(err){
-        expect(cl.hasConfigFile(fixturesDir)).to.be.false;
-      });
+      fs.writeFileSync(path.join(fixturesDir, 'package.json'), '{"hello": {}}', {encoding: 'utf-8'});
+      expect(cl.hasConfigFile(fixturesDir)).to.eventually.be.false;
     });
 
   });

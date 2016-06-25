@@ -1,4 +1,10 @@
 {
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "parser": "espree",
   "ecmaFeatures": {},
   "rules": {

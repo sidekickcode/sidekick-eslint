@@ -4,6 +4,12 @@
  */
 "use strict";
 
+const log = require('debug')('configLoader');
+const fs = require('fs');
+const Promise = require('bluebird');
+
+const readFileAsync = Promise.promisify(fs.readFile);
+
 //not part of eslint's public API - so fetch by path
 const esLintConfig = require('eslint/lib/config/config-file');
 
@@ -13,7 +19,21 @@ const esLintConfig = require('eslint/lib/config/config-file');
  * @returns {boolean}
  */
 module.exports.hasConfigFile = function(repoPath){
-  return esLintConfig.getFilenameForDirectory(repoPath) !== null;
+  return new Promise(function(resolve, reject){
+    const configFile = esLintConfig.getFilenameForDirectory(repoPath);
+    log(`Config file: ${configFile}`);
+    if(configFile && configFile.endsWith('/package.json')) {
+      log('Using package.json for eslint config');
+      readFileAsync(configFile)
+          .then((fileContents) => {
+            log('have loaded package.json');
+            const packageJson = JSON.parse(fileContents);
+            resolve(packageJson['eslintConfig'] !== undefined);
+          });
+    } else {
+      resolve(configFile !== null);
+    }
+  });
 };
 
 /**
