@@ -18,7 +18,7 @@
     "url": "https://github.com/sidekickcode/sidekick-eslint.git"
   },
   "scripts": {
-    "test": "exec mocha"
+    "test": "mocha test/testLoader.js"
   },
   "author": "We Are Sidekick Ltd.",
   "license": "MIT",
@@ -28,11 +28,13 @@
     "debug": "^2.2.0",
     "easy-stdin": "^1.0.1",
     "eslint": "^2.5.1",
-    "lodash": "3.10.1",
+    "lodash": "4.17.10",
     "strip-json-comments": "^1.0.4"
   },
   "devDependencies": {
+    "chai": "4.1.2",
     "chai-as-promised": "^5.3.0",
-    "mocha": "^2.4.5"
+    "fs-extra": "6.0.1",
+    "mocha": "5.2.0"
   }
 }

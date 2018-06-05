@@ -17,24 +17,24 @@ if (a) {
 
   do {
     o = p +
-  q; // NO ERROR: DON'T VALIDATE MULTILINE STATEMENTS
+      q; // NO ERROR: DON'T VALIDATE MULTILINE STATEMENTS
     o = p +
-    q;
-  } while(r); // <-
+      q;
+  } while (r); // <-
 
-  for (var s in t)     {
+  for (var s in t) {
     u++;
   }
 
-  for(;;) { // <-
+  for (; ;) { // <-
     v++; // <-
   }
 
-  if (w ) {
+  if (w) {
     x++;
   } else if (y) {
-      z++; // <-
-                      aa++;
+    z++; // <-
+    aa++;
   } else { // <-
     bb++; // ->
   } // ->
@@ -45,7 +45,7 @@ if (g) {
    * DOCBLOCK
    */
   var a = b +
-      c;
+    c;
 
   /**
    * DOCBLOCK
@@ -53,16 +53,15 @@ if (g) {
   var e = f + g;
 
 }
-else if(c) {
+else if (c) {
   d++;
 }
 
 var Detector = {
-  webgl: ( function () { try { a++; } catch( e ) { return false; } } )(),
-  workers: !! window.Worker
+  webgl: (function () { try { a++; } catch (e) { return false; } })(),
+  workers: !!window.Worker
 };
 
-for ( i = 0; i < len; i++ )
-{
+for (i = 0; i < len; i++) {
   a++;
 }
