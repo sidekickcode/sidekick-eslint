@@ -23,17 +23,17 @@
   "author": "We Are Sidekick Ltd.",
   "license": "MIT",
   "dependencies": {
-    "@sidekick/analyser-common": "^1.0.2",
-    "bluebird": "2.9.34",
-    "debug": "^2.2.0",
-    "easy-stdin": "^1.0.1",
+    "@sidekick/analyser-common": "1.0.2",
+    "bluebird": "3.5.1",
+    "debug": "2.6.9",
+    "easy-stdin": "1.0.1",
     "eslint": "^2.5.1",
     "lodash": "4.17.10",
-    "strip-json-comments": "^1.0.4"
+    "strip-json-comments": "1.0.4"
   },
   "devDependencies": {
     "chai": "4.1.2",
-    "chai-as-promised": "^5.3.0",
+    "chai-as-promised": "5.3.0",
     "fs-extra": "6.0.1",
     "mocha": "5.2.0"
   }
